@@ -1,0 +1,8 @@
+{
+  "name": "Manage Employees",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

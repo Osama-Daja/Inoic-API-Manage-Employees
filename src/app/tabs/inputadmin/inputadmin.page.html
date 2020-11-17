@@ -1,0 +1,79 @@
+<ion-header class="ion-text-center">
+  <ion-toolbar color="primary">
+    <ion-title>Add Admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content class="ion-text-center" padding>
+  
+    <ion-grid>
+      <ion-row>
+          <ion-col>
+          <ion-card>
+              <ion-card-content>
+                      <ion-card-header>
+                          <ion-card-title>New Expense</ion-card-title>
+                      </ion-card-header>
+                      <ion-item hidden>
+                          <ion-label position="floating">ID</ion-label>
+                          <ion-input [(ngModel)] = "service.id" type="Text" id="id"></ion-input>
+                      </ion-item>
+                      
+                      <ion-item>
+                          <ion-label position="floating">User Name</ion-label>
+                          <ion-input [(ngModel)] = "service.userName" type="Text" id="userName"></ion-input>
+                      </ion-item>
+    
+                      <ion-item>
+                          <ion-label position="floating">Full Name</ion-label>
+                          <ion-input [(ngModel)] = "service.fullName" type="Text" id="fullName"></ion-input>
+                      </ion-item>
+    
+                      <ion-item>
+                          <ion-label position="floating">Password</ion-label>
+                          <ion-input [(ngModel)] = "service.Password" type="password" id="Password"></ion-input>
+                      </ion-item>
+    
+                      <ion-item>
+                        <ion-label position="floating">Old password</ion-label>
+                        <ion-input [(ngModel)] = "service.Oldpassword" type="password" id="Oldpassword"></ion-input>
+                    </ion-item>
+                  <div margin-vertical text-right>
+                    <ion-button (click)="Return()" id="btn-confirm" ><ion-icon name="arrow-round-back"></ion-icon></ion-button>
+                    <ion-button ion-button color="secondary" outline (click)="onSubmit()" id="btn-confirm" > <ion-icon slot="start" name="add"></ion-icon>Submit</ion-button>
+              </div>
+              </ion-card-content>
+          </ion-card>
+      </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>
+
+<!--
+<ion-tabs preloadTabs="false">
+  <ion-tab-bar slot="bottom">
+    
+    <ion-tab-button (click) = "GoToPrivateHome()">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    
+    <ion-tab-button (click) = "GoToEmployeeList()">
+      <ion-icon name="people"></ion-icon>
+      <ion-label>Employee List</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click) = "GoToAdminList()">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Admin List</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click) = "LogOut()">
+      <ion-icon name="log-out"></ion-icon>
+      <ion-label>log-out</ion-label>
+    </ion-tab-button>
+    
+  </ion-tab-bar>
+
+</ion-tabs>
+-->

@@ -1,0 +1,57 @@
+<!--
+  <ion-tabs preloadTabs="false">
+  <ion-tab-bar>
+    <ion-tab-button tab="login">
+      <ion-icon name="log-in"></ion-icon>
+    <ion-label>Log In</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="publichome">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+
+  <ion-tabs preloadTabs="false">
+  <ion-tab-bar slot="bottom" *ngIf="service.LogIn then IsLogIn else IsnotLogIn">
+    
+  </ion-tab-bar>
+
+</ion-tabs>
+
+<ng-template #IsnotLogIn>
+  <ion-tab-bar>
+    <ion-tab-button tab="login">
+      <ion-icon name="log-in"></ion-icon>
+    <ion-label>Log In</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="publichome">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ng-template>
+
+<ng-template #IsLogIn>
+  <ion-tab-bar>
+    <ion-tab-button (click)="onLogout()">
+      <ion-icon name="log-out"></ion-icon>
+      <ion-label>log-out</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="Clear()" tab="privatehome">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>privatehome</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="Clear()" tab="employelist">
+      <ion-icon name="people"></ion-icon>
+      <ion-label>employelist</ion-label>
+    </ion-tab-button>
+  <ion-tab-button (click)="Clear()" tab="adminlist">
+    <ion-icon name="person"></ion-icon>
+    <ion-label>adminlist</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>
+</ng-template>
+-->

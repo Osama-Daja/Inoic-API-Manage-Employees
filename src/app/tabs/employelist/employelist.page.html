@@ -1,0 +1,207 @@
+
+<ion-header>
+  <ion-toolbar class="ion-text-center" color="primary">
+      <ion-title>Employee List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center" padding>
+<ion-grid>
+<ion-row>
+  <ion-col>
+    <ion-item>
+      <ion-label position="floating">Gender</ion-label>
+      <ion-select [(ngModel)] = "service.SearchGenderEmployee" id="SearchGenderEmployee">
+        <ion-select-option>All</ion-select-option>
+        <ion-select-option>Male</ion-select-option>
+        <ion-select-option>Female</ion-select-option>
+      </ion-select>
+  </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-item>
+      <ion-label position="floating">Name Employee</ion-label>
+      <ion-input [(ngModel)] = "service.SearchNameEmployee" type="Text" id="SearchNameEmployee"></ion-input>
+  </ion-item>
+  </ion-col>
+</ion-row>
+</ion-grid>
+
+<ion-button expand="full"  (click)="SearchButton()" id="btn-confirm" > Search </ion-button>
+<hr>
+<ion-button expand="full" (click) = "GoToInputEmployee()">
+  <ion-icon name="add-circle"></ion-icon>
+</ion-button>
+
+<ion-grid margin>
+  <ion-row>
+    <ion-col> UserName </ion-col>
+    <ion-col> Age </ion-col>
+    <ion-col> Gender </ion-col>
+    <ion-col> Date Of Employment</ion-col>
+    <ion-col align-items-center>
+      
+    </ion-col>
+  </ion-row>
+  <ion-row *ngFor="let pd of service.Employeelist">
+      <ion-col align-items-center (click) ="populateForm(pd)">{{pd.name}}</ion-col>
+      <ion-col align-items-center (click) ="populateForm(pd)">{{pd.age}}</ion-col>
+      <ion-col align-items-center (click) ="populateForm(pd)">{{pd.gender}}</ion-col>
+      <ion-col align-items-center (click) ="populateForm(pd)">{{pd.dateOfEmployment}}</ion-col>
+      <ion-button ion-button color="danger" round align-items-center (click) = "onDelete(pd)"><ion-icon name="trash"></ion-icon></ion-button>
+    </ion-row>
+</ion-grid>
+
+</ion-content>
+
+<!--
+<ion-tabs preloadTabs="false">
+  <ion-tab-bar slot="bottom">
+    
+    <ion-tab-button (click) = "GoToPrivateHome()">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    
+    <ion-tab-button (click) = "GoToEmployeeList()">
+      <ion-icon name="people"></ion-icon>
+      <ion-label>Employee List</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click) = "GoToAdminList()">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Admin List</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click) = "LogOut()">
+      <ion-icon name="log-out"></ion-icon>
+      <ion-label>log-out</ion-label>
+    </ion-tab-button>
+    
+  </ion-tab-bar>
+
+</ion-tabs>
+-->
+
+<!--
+   <ion-row>
+    <ion-col size="6">ion-col size="6"</ion-col>
+    <ion-col>ion-col</ion-col>
+    <ion-col>ion-col</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="3">ion-col size="3"</ion-col>
+    <ion-col>ion-col</ion-col>
+    <ion-col size="3">ion-col size="3"</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="3">ion-col size="3"</ion-col>
+    <ion-col size="3" offset="3">
+      ion-col size="3" offset="3"
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>ion-col</ion-col>
+    <ion-col>
+      ion-col
+      <br />#
+    </ion-col>
+    <ion-col>
+      ion-col
+      <br />#
+      <br />#
+    </ion-col>
+    <ion-col>
+      ion-col
+      <br />#
+      <br />#
+      <br />#
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col align-self-start>ion-col start</ion-col>
+    <ion-col align-self-center>ion-col center</ion-col>
+    <ion-col align-self-end>ion-col end</ion-col>
+    <ion-col>
+      ion-col
+      <br />#
+      <br />#
+    </ion-col>
+  </ion-row>
+
+  <ion-row align-items-start>
+    <ion-col>start ion-col</ion-col>
+    <ion-col>start ion-col</ion-col>
+    <ion-col align-self-end>start ion-col end</ion-col>
+    <ion-col>
+      ion-col
+      <br />#
+      <br />#
+    </ion-col>
+  </ion-row>
+
+  <ion-row align-items-center>
+    <ion-col>center ion-col</ion-col>
+    <ion-col>center ion-col</ion-col>
+    <ion-col>center ion-col</ion-col>
+    <ion-col>
+      ion-col
+      <br />#
+      <br />#
+    </ion-col>
+  </ion-row>
+
+  <ion-row align-items-end>
+    <ion-col>end ion-col</ion-col>
+    <ion-col align-self-start>end ion-col start</ion-col>
+    <ion-col>end ion-col</ion-col>
+    <ion-col>
+      ion-col
+      <br />#
+      <br />#
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12" size-sm>
+      ion-col size="12" size-sm
+    </ion-col>
+    <ion-col size="12" size-sm>
+      ion-col size="12" size-sm
+    </ion-col>
+    <ion-col size="12" size-sm>
+      ion-col size="12" size-sm
+    </ion-col>
+    <ion-col size="12" size-sm>
+      ion-col size="12" size-sm
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12" size-md>
+      ion-col size="12" size-md
+    </ion-col>
+    <ion-col size="12" size-md>
+      ion-col size="12" size-md
+    </ion-col>
+    <ion-col size="12" size-md>
+      ion-col size="12" size-md
+    </ion-col>
+    <ion-col size="12" size-md>
+      ion-col size="12" size-md
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="6" size-lg offset="3">
+      ion-col size="6" size-lg offset="3"
+    </ion-col>
+    <ion-col size="3" size-lg>
+      ion-col size="3" size-lg
+    </ion-col>
+  </ion-row>
+-->

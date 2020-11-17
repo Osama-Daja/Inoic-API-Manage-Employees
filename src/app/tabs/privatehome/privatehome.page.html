@@ -1,0 +1,410 @@
+<ion-header class="ion-text-center">
+  <ion-toolbar color="primary">
+    <ion-title>Staff State</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid class="ion-text-center" margin>
+    <ion-row>
+        <ion-col>
+            <ion-card padding>
+                <h1>
+                    <ion-header style="margin-left: 10px;">Female</ion-header>
+                </h1>
+                <ion-title>
+                    {{userDetails.countFemaleEmployee}} OF {{userDetails.totalEmployee}}
+                </ion-title>
+  
+                <ion-grid>
+                    <ion-row>
+                        <ion-card>
+                            <ion-row>
+                                <ion-col>
+                                    <ion-thumbnail>
+                                        <img src="/assets/IMG/woman.png">
+                                    </ion-thumbnail>
+  
+                                </ion-col>
+                                <ion-col style="margin-left: 100px;">
+                                  <ion-row>Female</ion-row>
+                                  <ion-row>{{userDetails.rangeGenderFemale}}%</ion-row>
+                                </ion-col>
+                            </ion-row>
+                            <h5 style="margin-left: 10px; margin-right: 10px;">Range Gander Female Employee</h5>
+                        </ion-card>
+                    </ion-row>
+                </ion-grid>
+  
+                <h5 style="margin-left: 10px; margin-right: 10px;">Female Employee Counte Of Total Employee</h5>
+            </ion-card>
+  
+        </ion-col>
+    </ion-row>
+
+
+
+  </ion-grid>
+    
+  <ion-grid class="ion-text-center" margin>
+    <ion-row>
+        <ion-col>
+            <ion-card padding>
+                <h1>
+                    <ion-header style="margin-left: 10px;">Male</ion-header>
+                </h1>
+                <ion-title>
+                    {{userDetails.countMaleEmployee}} OF {{userDetails.totalEmployee}}
+                </ion-title>
+  
+                <ion-grid>
+                    <ion-row>
+                        <ion-card>
+                            <ion-row>
+                                <ion-col>
+                                    <ion-thumbnail>
+                                        <img src="/assets/IMG/young.png">
+                                    </ion-thumbnail>
+  
+                                </ion-col>
+                                <ion-col style="margin-left: 100px;">
+                                  <ion-row>Male</ion-row>
+                                  <ion-row>{{userDetails.rangeGenderMale}}%</ion-row>
+                                </ion-col>
+                            </ion-row>
+                            <h5 style="margin-left: 10px; margin-right: 10px;">Range Gander Male Employee</h5>
+                        </ion-card>
+                    </ion-row>
+                </ion-grid>
+  
+                <h5 style="margin-left: 10px; margin-right: 10px;">Male Employee Counte Of Total Employee</h5>
+            </ion-card>
+  
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <hr>
+  
+  <ion-grid class="ion-text-center" margin>
+    <ion-row>
+        <ion-col>
+            <ion-card padding>
+                <h1>
+                    <ion-header style="margin-left: 10px;">Caount Employees & Range</ion-header>
+                </h1>
+                <ion-grid padding>
+                    <ion-row>
+                        <ion-card>
+                          <ion-title padding>
+                            Old 20 To 30    
+                            </ion-title>
+                            <ion-row>
+                                <ion-col size-md="6" padding>
+                                    <ion-row padding>Count</ion-row>
+                                    <ion-row padding>{{userDetails.countRange2030}} Of {{userDetails.totalEmployee}}</ion-row>
+                                </ion-col>
+                                <ion-col size-md="6" padding>
+                                  <ion-row padding>Range</ion-row>
+                                  <ion-row padding>{{userDetails.range2030Range}}%</ion-row>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card>
+                    </ion-row>
+  
+                    <hr>
+  
+                    <ion-row>
+                      <ion-card>
+                        <ion-title padding>
+                          Old 30 To 40    
+                          </ion-title>
+                          <ion-row>
+                              <ion-col size-md="6" padding>
+                                  <ion-row padding>Count</ion-row>
+                                  <ion-row padding>{{userDetails.countRange3040}} Of {{userDetails.totalEmployee}}</ion-row>
+                              </ion-col>
+                              <ion-col size-md="6" padding>
+                                <ion-row padding>female</ion-row>
+                                <ion-row padding>{{userDetails.range3040Range}}%</ion-row>
+                              </ion-col>
+                          </ion-row>
+                      </ion-card>
+                  </ion-row>
+  
+                  <hr>
+  
+                  <ion-row >
+                    <ion-card>
+                      <ion-title padding>
+                        More 40 Old   
+                        </ion-title>
+                        <ion-row>
+                            <ion-col size-md="6" padding>
+                                <ion-row padding>Count</ion-row>
+                                <ion-row padding>{{userDetails.countMore40}} Of {{userDetails.totalEmployee}}</ion-row>
+                            </ion-col>
+                            <ion-col size-md="6" padding>
+                              <ion-row padding>Range</ion-row>
+                              <ion-row padding>{{userDetails.more40Range}}%</ion-row>
+                            </ion-col>
+                        </ion-row>
+                    </ion-card>
+                </ion-row>
+                </ion-grid>
+            </ion-card>
+  
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<!--
+<ion-tabs preloadTabs="false">
+  <ion-tab-bar slot="bottom">
+    
+    <ion-tab-button (click) = "GoToPrivateHome()">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    
+    <ion-tab-button (click) = "GoToEmployeeList()">
+      <ion-icon name="people"></ion-icon>
+      <ion-label>Employee List</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click) = "GoToAdminList()">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Admin List</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click) = "LogOut()">
+      <ion-icon name="log-out"></ion-icon>
+      <ion-label>log-out</ion-label>
+    </ion-tab-button>
+    
+  </ion-tab-bar>
+
+</ion-tabs>
+-->
+
+<!--
+
+  
+  <ion-grid class="ion-text-center" margin>
+    <ion-row>
+        <ion-col>
+            <ion-card padding>
+                <h1>
+                    <ion-header style="margin-left: 10px;">Female</ion-header>
+                </h1>
+                <ion-title>
+                    {{userDetails.countFemaleEmployee}} OF {{userDetails.totalEmployee}}
+                </ion-title>
+  
+                <ion-grid>
+                    <ion-row>
+                        <ion-card>
+                            <ion-row>
+                                <ion-col>
+                                    <ion-thumbnail>
+                                        <img src="/assets/IMG/woman.png">
+                                    </ion-thumbnail>
+  
+                                </ion-col>
+                                <ion-col style="margin-left: 100px;">
+                                  <ion-row>Female</ion-row>
+                                  <ion-row>{{userDetails.rangeGenderFemale}}%</ion-row>
+                                </ion-col>
+                            </ion-row>
+                            <h5 style="margin-left: 10px; margin-right: 10px;">Range Gander Female Employee</h5>
+                        </ion-card>
+                    </ion-row>
+                </ion-grid>
+  
+                <h5 style="margin-left: 10px; margin-right: 10px;">Female Employee Counte Of Total Employee</h5>
+            </ion-card>
+  
+        </ion-col>
+    </ion-row>
+
+
+
+  </ion-grid>
+    
+  <ion-grid class="ion-text-center" margin>
+    <ion-row>
+        <ion-col>
+            <ion-card padding>
+                <h1>
+                    <ion-header style="margin-left: 10px;">Male</ion-header>
+                </h1>
+                <ion-title>
+                    {{userDetails.countMaleEmployee}} OF {{userDetails.totalEmployee}}
+                </ion-title>
+  
+                <ion-grid>
+                    <ion-row>
+                        <ion-card>
+                            <ion-row>
+                                <ion-col>
+                                    <ion-thumbnail>
+                                        <img src="/assets/IMG/young.png">
+                                    </ion-thumbnail>
+  
+                                </ion-col>
+                                <ion-col style="margin-left: 100px;">
+                                  <ion-row>Male</ion-row>
+                                  <ion-row>{{userDetails.rangeGenderMale}}%</ion-row>
+                                </ion-col>
+                            </ion-row>
+                            <h5 style="margin-left: 10px; margin-right: 10px;">Range Gander Male Employee</h5>
+                        </ion-card>
+                    </ion-row>
+                </ion-grid>
+  
+                <h5 style="margin-left: 10px; margin-right: 10px;">Male Employee Counte Of Total Employee</h5>
+            </ion-card>
+  
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <hr>
+  
+  <ion-grid class="ion-text-center" margin>
+    <ion-row>
+        <ion-col>
+            <ion-card padding>
+                <h1>
+                    <ion-header style="margin-left: 10px;">Caount Employees & Range</ion-header>
+                </h1>
+                <ion-grid padding>
+                    <ion-row>
+                        <ion-card>
+                          <ion-title padding>
+                            Old 20 To 30    
+                            </ion-title>
+                            <ion-row>
+                                <ion-col size-md="6" padding>
+                                    <ion-row padding>Count</ion-row>
+                                    <ion-row padding>{{userDetails.countRange2030}} Of {{userDetails.totalEmployee}}</ion-row>
+                                </ion-col>
+                                <ion-col size-md="6" padding>
+                                  <ion-row padding>Range</ion-row>
+                                  <ion-row padding>{{userDetails.range2030Range}}%</ion-row>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card>
+                    </ion-row>
+  
+                    <hr>
+  
+                    <ion-row>
+                      <ion-card>
+                        <ion-title padding>
+                          Old 30 To 40    
+                          </ion-title>
+                          <ion-row>
+                              <ion-col size-md="6" padding>
+                                  <ion-row padding>Count</ion-row>
+                                  <ion-row padding>{{userDetails.countRange3040}} Of {{userDetails.totalEmployee}}</ion-row>
+                              </ion-col>
+                              <ion-col size-md="6" padding>
+                                <ion-row padding>female</ion-row>
+                                <ion-row padding>{{userDetails.range3040Range}}%</ion-row>
+                              </ion-col>
+                          </ion-row>
+                      </ion-card>
+                  </ion-row>
+  
+                  <hr>
+  
+                  <ion-row >
+                    <ion-card>
+                      <ion-title padding>
+                        More 40 Old   
+                        </ion-title>
+                        <ion-row>
+                            <ion-col size-md="6" padding>
+                                <ion-row padding>Count</ion-row>
+                                <ion-row padding>{{userDetails.countMore40}} Of {{userDetails.totalEmployee}}</ion-row>
+                            </ion-col>
+                            <ion-col size-md="6" padding>
+                              <ion-row padding>Range</ion-row>
+                              <ion-row padding>{{userDetails.more40Range}}%</ion-row>
+                            </ion-col>
+                        </ion-row>
+                    </ion-card>
+                </ion-row>
+                </ion-grid>
+            </ion-card>
+  
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+    <ion-grid>
+
+  <ion-row padding margin>
+    <ion-col><ion-icon name="people"></ion-icon></ion-col>
+    <ion-col>
+      <ion-row>
+        <ion-label text-center margin>Total Employee</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-label margin>{{userDetails.totalEmployee}}</ion-label>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-label>countMaleEmployee</ion-label>
+    <ion-label>{{userDetails.countMaleEmployee}}</ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-label>countFemaleEmployee</ion-label>
+    <ion-label>{{userDetails.countFemaleEmployee}}</ion-label>
+  </ion-row>
+
+  <ion-row>
+    <ion-label>rangeGenderMale</ion-label>
+    <ion-label>{{userDetails.rangeGenderMale}}</ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-label>rangeGenderFemale</ion-label>
+    <ion-label>{{userDetails.rangeGenderFemale}}</ion-label>
+  </ion-row>
+
+  <ion-row>
+    <ion-label>countRange2030</ion-label>
+    <ion-label>{{userDetails.countRange2030}}</ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-label>countRange3040</ion-label>
+    <ion-label>{{userDetails.countRange3040}}</ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-label>countMore40</ion-label>
+    <ion-label>{{userDetails.countMore40}}</ion-label>
+  </ion-row>
+
+  <ion-row>
+    <ion-label>range2030Range</ion-label>
+    <ion-label>{{userDetails.range2030Range}}</ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-label>range3040Range</ion-label>
+    <ion-label>{{userDetails.range3040Range}}</ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-label>more40Range</ion-label>
+    <ion-label>{{userDetails.more40Range}}</ion-label>
+  </ion-row>
+
+</ion-grid>
+-->
